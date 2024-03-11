@@ -1,0 +1,83 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int numeroVolteCalcolato = 0;
+        String scelta;
+        String sceltaOperazione;
+        Random random = new Random();
+
+        
+        for(int i = 1; i > 0;){
+            do {
+                System.out.println("Vuoi calcolare ? ");
+                 scelta = sc.next();
+                 if(scelta.equals("no")){
+                    System.out.println("Hai calcolato " +numeroVolteCalcolato + " volte");
+                    i--;
+                 }else if(scelta.equals("si")){
+                    System.out.println("Quale operazione matematica vuoi scegliere?");
+                    sceltaOperazione = sc.next();
+                    switch (sceltaOperazione) {
+                        case "addizione":
+                             System.out.println("Scegli il primo numero :");
+                            int numero1Addizione = sc.nextInt();
+                            System.out.println("Scegli il secondo numero :");
+                            int numero2Addizione = sc.nextInt();
+                            int opzioneRisultatoGiustoAddizione = numero1Addizione + numero2Addizione;
+                            int opzioneRisultatoErratoAddizione = random.nextInt(100);
+                            System.out.println("qual è l'opzione giusta? " +opzioneRisultatoGiustoAddizione + " o " + opzioneRisultatoErratoAddizione + " ?");
+                            sceltaOperazione = sc.next();
+                            numeroVolteCalcolato++;                    
+                            break;
+    
+                            case "sottrazione":
+                            System.out.println("Scegli il primo numero :");
+                           int numero1Sottrazione = sc.nextInt();
+                           System.out.println("Scegli il secondo numero :");
+                           int numero2Sottrazione = sc.nextInt();
+                           int opzioneRisultatoGiustoSottrazione = numero1Sottrazione - numero2Sottrazione;
+                           int opzioneRisultatoErratoSottrazione = random.nextInt(100);
+                           System.out.println("qual è l'opzione giusta? " +opzioneRisultatoGiustoSottrazione + " o " + opzioneRisultatoErratoSottrazione + " ?");
+                           sceltaOperazione = sc.next();
+                           numeroVolteCalcolato++;                    
+                           break;
+    
+                           case "moltiplicazione":
+                            System.out.println("Scegli il primo numero :");
+                           int numero1Moltiplicazione = sc.nextInt();
+                           System.out.println("Scegli il secondo numero :");
+                           int numero2Moltiplicazione = sc.nextInt();
+                           int opzioneRisultatoGiustoMoltiplicazione  = numero1Moltiplicazione  * numero2Moltiplicazione ;
+                           int opzioneRisultatoErratoMoltiplicazione  = random.nextInt(100);
+                           System.out.println("qual è l'opzione giusta? " +opzioneRisultatoGiustoMoltiplicazione  + " o " + opzioneRisultatoErratoMoltiplicazione  + " ?");
+                           sceltaOperazione = sc.next();
+                           numeroVolteCalcolato++;                    
+                           break;
+    
+                           case "divisione":
+                           System.out.println("Scegli il primo numero :");
+                          int numero1Divisione = sc.nextInt();
+                          System.out.println("Scegli il secondo numero :");
+                          int numero2Divisione  = sc.nextInt();
+                          int opzioneRisultatoGiustoDivisione  = numero1Divisione  * numero2Divisione ;
+                          int opzioneRisultatoErratoDivisione  = random.nextInt(100);
+                          System.out.println("qual è l'opzione giusta? " +opzioneRisultatoGiustoDivisione  + " o " + opzioneRisultatoErratoDivisione + " ?");
+                          sceltaOperazione = sc.next();
+                          numeroVolteCalcolato++;                    
+                          break;
+    
+                    
+                        default:
+                            break;
+                    }
+                 }
+            } while (scelta.equals("si"));
+        }
+        
+
+        
+    }
+}
